@@ -1,0 +1,63 @@
+@use '../media.scss' as *;
+@use '../mixins' as *;
+
+.galleryContainer{
+    &.hide{
+        display: none;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+        .thubs{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            .gallery{
+                width: 100%;
+                border-radius: 2px;
+                overflow: hidden;
+                height: fit-content;
+                position: relative;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                }
+                &:hover .infos{
+                    visibility: visible;
+                    opacity: 1;
+                }
+                .infos{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    color: white;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: end;
+                    background: linear-gradient(to top, black, transparent);
+                    padding: 0 15px 15px 15px;
+                    margin-bottom: 5px;
+                    height: 50%;
+                    width: 100%;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all .3s;
+                    .artist{
+                        font-weight: 400;
+                        font-size: 10px;
+                        line-height: 1.5;
+                        opacity: .75;
+                    }
+                }
+            }
+        }
+        @include max-lg{
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+    }
+    @include max-md{
+        padding-bottom: 30px;
+    }
+}

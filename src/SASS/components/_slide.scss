@@ -1,0 +1,245 @@
+@use '../media.scss' as *;
+@use '../mixins' as *;
+
+
+.slide{
+    position: absolute;
+    background-color: white;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    &.show{
+        z-index: 1;
+        opacity: 1;
+        visibility: visible;
+    }
+    .details{
+        @include between;
+        gap: 200px;
+        height: 600px;
+        max-height: 600px;
+        .pic-name{
+            display: flex;
+            position: relative;
+            width: 100%;
+            .hero{
+                width: 450px;
+                & + .name-artist{
+                    padding: 20px;
+                    margin-left: -100px;
+                    background-color: white;
+                    height: fit-content;
+                    min-width: 300px;
+                    .name{
+                        font-size: 45px;
+                        font-weight: 700;
+                        @include max-sm{
+                            font-size: 20px;
+                        }
+                    }
+                    .artist{
+                        line-height: 2;
+                        font-size: 13px;
+                        color: #7c7c7c;
+                        @include max-sm{
+                            line-height: 2.5;
+                            font-size: 10px;
+                        }
+                    }
+                    @include max-md{
+                        max-width: 350px;
+                    }
+                    @include max-sm{
+                        position: absolute;
+                        z-index: 1;
+                        left: 100px;
+                        bottom: -25px;
+                        top: unset;
+                        min-width: 200px;
+                    }
+                }
+                @include max-lg{
+                    width: 350px;
+                }
+                @include max-md{
+                    width: 400px;
+                }
+                @include max-sm{
+                    width: 100%;
+                    max-height: 450px;
+                }
+            }
+            .artist-pic{
+                position: absolute;
+                bottom: -50px;
+                right: 50px;
+                width: 110px;
+                @include max-md{
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 100px;
+                }
+                @include max-sm{
+                    bottom: -125px;
+                    top: unset;
+                    width: 60px;
+                    left: 0;
+                }
+            }
+            .view-img{
+                position: absolute;
+                color: white;
+                bottom: 10px;
+                left: 10px;
+                background-color: #00000096;
+                font-size: 10px;
+                letter-spacing: 2px;
+                padding: 10px;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                cursor: pointer;
+                transition: all 0.2s;
+                &:hover{
+                    opacity: .85;
+                }
+                &:active{
+                    scale: .96;
+                }
+                @include max-sm{
+                    top: 10px;
+                    bottom: unset;
+                }
+                > p {
+                    @include mb{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .desc{
+            position: relative;
+            margin-top: 150px;
+            .year{
+                position: absolute;
+                color: #7c7c7c;
+                font-size: 160px;
+                top: -120px;
+                right: -30px;
+                font-weight: 600;
+                opacity: .1;
+                @include max-md{
+                    right: unset;
+                    top: -90px;
+                }
+                @include max-sm{
+                    right: 20px;
+                    font-size: 90px;
+                    top: -70px;
+                }
+            }
+            > p{
+                font-size: 13px;
+                font-weight: 600;
+                color: #7d7d7d;
+                line-height: 2;
+                padding-right: 50px;
+                & + a{
+                    display: block;
+                    margin-top: 50px;
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                    font-size: 8px;
+                    outline: none;
+                    width: fit-content;
+                    color: #7c7c7c;
+                    transition: all .2s;
+                    &:hover{
+                        color: #444444;
+                    }
+                    @include max-md{
+                        margin-top: 30px;
+                        padding-left: 50px;
+                    }
+                    @include max-sm{
+                        padding: 0;
+                    }
+                }
+                @include max-lg{
+                    padding: 0;
+                }
+                @include max-sm{
+                    padding: 0;
+                }
+            }
+            @include max-md{
+                margin-top: 0;
+            }
+        }
+        @include max-lg{
+            gap: 100px;
+        }
+        @include max-md{
+            flex-direction: column;
+            height: 720px;
+            max-height: 720px;
+        }
+        @include max-sm{
+            gap: 150px;
+            height: 880px;
+            max-height: 880px;
+        }
+    }
+    .browsing{
+        margin-top: 60px;
+        border-top: 1px solid #0000002e;
+        padding: 20px 0 0;
+        position: relative;
+        @include between;
+        .progress{
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+            transition: all .3s;
+        }
+        .name-artist{
+            .name{
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+            .artist{
+                font-size: 11px;
+                line-height: 2;
+                color: #7c7c7c;
+            }
+        }
+        .browse{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            > img{
+                transition: all .2s;
+                user-select: none;
+                cursor: pointer;
+                &:hover{
+                    opacity: .5;
+                }
+            }
+        }
+        @include max-sm{
+            padding: 20px 0;
+        }
+    }
+    @include max-md{
+        margin-top: 30px;
+    }
+}

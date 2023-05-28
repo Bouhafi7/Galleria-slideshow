@@ -1,0 +1,17 @@
+@use './SASS/media' as *;
+@use './SASS/mixins' as *;
+@use './SASS/components/header' as *;
+@use './SASS/components/galleryContainer' as *;
+@use './SASS/components/slide' as *;
+@use './SASS/components/modalBox' as *;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Libre Baskerville, serif;
+}
+
+body{
+    position: relative;
+}

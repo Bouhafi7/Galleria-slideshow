@@ -1,0 +1,40 @@
+@use '../media.scss' as *;
+@use '../mixins' as *;
+
+header{
+    .container{
+        @include between;
+        height: 100px;
+        position: relative;
+        margin-bottom: 50px;
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            height: 1px;
+            background-color: #e5e5e5;
+        }
+        img{
+            width: 150px;
+            @include max-sm{
+                width: 120px;
+            }
+        }
+        .slide-btn{
+            color: #7d7d7d;
+            font-size: 12px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline;
+                color: #000;
+            }
+            @include max-sm{
+                font-size: 10px;
+            }
+        }
+    }
+}

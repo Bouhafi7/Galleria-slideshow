@@ -1,0 +1,53 @@
+@mixin mb{
+    @media (max-width:340px){
+        @content;
+    }
+}
+
+@mixin min-sm{
+    @media (min-width:781px){
+        @content;
+    }
+}
+
+@mixin min-md{
+    @media (min-width:991px){
+        @content;
+    }
+}
+
+@mixin min-lg{
+    @media (min-width:1199px){
+        @content;
+    }
+}
+
+@mixin max-sm{
+    @media (max-width:781px){
+        @content;
+    }
+}
+
+@mixin max-md{
+    @media (max-width:991px){
+        @content;
+    }
+}
+
+@mixin max-lg{
+    @media (max-width:1199px){
+        @content;
+    }
+}
+
+@mixin sm{
+    @media (min-width:781px){
+        @content;
+    }
+}
+
+@mixin md{
+    @media (min-width:991px){
+        @content;
+    }
+}
